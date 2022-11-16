@@ -1,0 +1,110 @@
+<HTML>
+<HEAD>
+<TITLE>Cong Zhou</TITLE>
+  
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+  </script>
+  
+</HEAD>
+<blockquote>
+<hr>
+<img src="crestUM_Web_2x.png"></br>
+<hr>
+  
+  
+	<h3 class="spf-post">Free independent</a></h3>
+	<div class="spf-content"><p><!--Oct 26, 2022 --></p>
+<p>In this blog, we discuss independence in order to compare it with freeness. The classical notation of independence in probability spaces has the following extension to the noncommutative term.</p>
+
+		
+<div class="post-content" itemprop="articleBody">
+    
+   <p>\(\def\blambda{\boldsymbol \lambda}\)
+\(\def\bX{\boldsymbol X}\)
+\(\def\N{\mathbb N}\)
+\(\def\P{\mathbb P}\)
+\(\def\bi{\boldsymbol i}\)
+\(\def\bG{\boldsymbol G}\)
+\(\def\bsigma{\boldsymbol \sigma}\)
+\(\def\bv{\boldsymbol v}\)
+\(\def\bu{\boldsymbol u}\)
+\(\def\sT{\mathsf T}\)
+\(\def\bW{\boldsymbol W}\)
+\(\def\bA{\boldsymbol A}\)
+\(\def\R{\mathbb R}\)
+\(\def\S{\mathbb S}\)
+\(\def\GOE{\text{GOE}}\)
+\(\def\|{\Vert}\)
+\(\def\bx{\boldsymbol x}\)
+\(\def\cN{\mathcal N}\)
+\(\def\E{\mathbb E}\)
+\(\def\de{\text{d}}\)
+\(\def\vphi{\varphi}\)
+\(\def\bQ{\boldsymbol Q}\)
+\(\def\diag{\text{diag}}\)
+\(\def\bzero{\boldsymbol 0}\)
+\(\def\id{\mathbf I}\)
+\(\def\ones{\mathbf 1}\)
+\(\def\ext{\text{ext}}\)
+\(\def\|{\Vert}\)
+\(\def\bLambda{\boldsymbol \Lambda}\)
+\(\def\const{\text{const}}\)
+\(\def\Unif{\text{Unif}}\)
+\(\def\bSigma{\boldsymbol \Sigma}\)</p>
+	 
+<h3 id="1-a-motivating-example-spiked-goe-matrix">1. A motivating example: Sample Gini covariance matrix (GCM) and its limiting spectral distribution</h3>
+
+<p>We consider a sequence of i.i.d. observations \(\mathbf{x}_1,\dots,\mathbf{x}_n\in\mathbb{R}^{p}\) generated from \(\mathbf{x}=\mathbf{m}+\omega\mathbf{A}^{\frac{1}{2}}\mathbf{z}\), which admit the following stochastic representation
+\[
+	\mathbf{x}_j=m+\sigma \mathbf{A}^{1/2}\mathbf{z}_j,\qquad j=1,\dots,n,
+\]
+where the shape matrix \(\mathbf{A}\) of the population, is positive definite, deterministic, and normalized as \(\mathrm{tr}(\mathbf{A})=p\). The random variables \((z_{ij})\) from the random vector \(\mathbf{z}_j=(z_{1j},\dots,z_{pj})'\) are i.i.d. and satisfy 
+\[
+	\mathbb{E}(z_{ij})=0,\qquad\mathbb{E}(z^2_{ij})=1, \qquad\mathbb{E}(z^4_{ij})=\tau, \qquad\mathbb{E}(z^{4+\delta}_{ij})<\infty,
+\]
+for some \(\delta>0\).
+	
+Then, we have the following 
+\[
+	\mathbf{x}_i-\mathbf{x}_j=\sigma \mathbf{A}^{1/2}(\mathbf{z}_i-\mathbf{z}_j)
+\]
+for \(i,j=1,\dots,n\). We then relabel the unique \((i,j)\) pair via \(k=1,\dots,n(n-1)/2\) and denote by 
+\[
+	\mathbf{y}_k=\mathbf{y}_{k(i,j:i &lt; j)}=\mathbf{z}_i-\mathbf{z}_j.
+\]
+Let \(g_k=\sqrt{p/{\mathbf{y}'_k\mathbf{A}\mathbf{y}_k}}\), for \(k=1,\dots,n(n-1)/2\), and denote 
+\[
+	\mathbf{Y}=(\mathbf{y}_1,\dots,\mathbf{y}_{n(n-1)/2}),\qquad \mathbf{G}=\mathrm{diag}(g_1,\dots,g_{n(n-1)/2}).
+\]
+Hence, the sample Gini covariance matrix <a href="#ref1">[1]</a> can be represented in the following way,
+\[
+	\hat{\mathbf{\Sigma}}_g=\frac{2}{n(n-1)}\sum_{i&lt;j}\frac{(\mathbf{x}_i-\mathbf{x}_j)(\mathbf{x}_i-\mathbf{x_j})^{'}}{\|\mathbf{x}_i-\mathbf{x}_j\|}=\frac{2}{n(n-1)}\mathbf{A}^{1/2}\mathbf{Y}\mathbf{G}\mathbf{Y}'\mathbf{A}^{1/2}.
+\]
+</p>
+<p>We are interested in the empirical spectral (eigenvalue) distribution of \(\hat{\mathbf{\Sigma}}_g\) and its limiting spectral distribution when \(p/n=c_n\to c\in(0,\infty)\). The result below is analogy to the Marchenko-Pastur-Law.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter is-resized"><img class="wp-image-15" src="https://congjo.github.io/blog/free independent/c=0.9.png" alt="" width="580" height="387" srcset="https://congjo.github.io/blog/free independent/c=0.9.png 1024w" sizes="(max-width: 580px) 100vw, 580px" />
+	<figcaption id="caption-attachment-1190" class="wp-caption-text">Histogram of eigenvalues of the sample GCM (\(\hat{\mathbf{\Sigma}}_g\)) with \(c=0.9\), \(p=500\), and \(z_{11}\sim\ N(0,1)\). Density curve (the red curve) of limiting density of the corresponding GCM for \(c=0.9\).</figcaption></figure>
+</div>
+	
+<!-- \begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{c=0.9.png}
+    \caption{Histogram of eigenvalues of the sample GCM (\(\hat{\mathbf{\Sigma}}_g\)) with \(c=0.9\), \(p=500\), and \(z_{11}\sim\ N(0,1)\). Density curve (the red curve) of limiting density of the corresponding GCM for \(c=0.9\).}
+    \label{fig:my_label}
+\end{figure} -->	
+	
+	
+	
+<h3 id="references">References</h3>
+
+<p id="ref1">[1] Xin Dang, Hailin Sang, and Lauren Weatherall. Gini covariance matrix and
+its affine equivariant version. Statistical Papers, 60(3):641–666, 2019.</p>
+
+<p id="ref2">[2] Weiming Li, Qinwen Wang, Jianfeng Yao, and Wang Zhou. On eigenvalues of
+a high-dimensional spatial-sign covariance matrix. Bernoulli, 28(1):606–637,
+2022.
+2.</p>
